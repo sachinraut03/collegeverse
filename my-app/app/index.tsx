@@ -4,7 +4,7 @@ export default function Index() {
   return (
     <View>
     <Login/> 
-     <Text>sachin raut</Text>
+     <Text></Text>
     </View>
   );
 }

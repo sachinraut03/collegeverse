@@ -1,15 +1,14 @@
 import { View, Text, TextInput, TextInputComponent, TouchableOpacity } from 'react-native'
-import React, { useEffect } from 'react'
+import React from 'react'
+import { useEffect } from 'react'
 import { useNavigation } from 'expo-router'
 import {  Header } from 'react-native/Libraries/NewAppScreen';
 import { Colors } from './../../../constants/Colors'
 import { StyleSheet } from 'react-native';
-import { useRoute } from '@react-navigation/native';
 
-export default function SignIn(){
 
+export default function SignUP() {
   const nevigation=useNavigation();
-  const router=useRoute()
 
   useEffect (()=>{
     nevigation.setOptions({
@@ -17,7 +16,6 @@ export default function SignIn(){
     })
   },[])
   return (
-
     <View style={{
       padding:25,
       marginTop:25
@@ -28,7 +26,22 @@ export default function SignIn(){
        
         color:Colors.PRIMARY,
         marginTop:20,
-      }}>Welcome Back</Text>
+      }}>Create New Acount</Text>
+
+
+    <View style={{
+      marginTop:30,
+    }}
+    >
+      <Text style={{
+        fontFamily:'Outfit-Medium',
+      }}>Name</Text>
+      <TextInput
+       style={styles.input}
+       placeholder='Enter Your Name' />
+        
+    </View> 
+
 
 
     <View style={{
@@ -43,6 +56,7 @@ export default function SignIn(){
        placeholder='Enter Your Email' />
         
     </View> 
+
 
 
     <View style={{
@@ -60,20 +74,19 @@ export default function SignIn(){
     </View> 
 
 
-<TouchableOpacity
-
->
-<Text style={{
+ <View style={{
+      marginTop:30,
+    }}
+    >
+      <Text style={{
         fontFamily:'Outfit-Medium',
-        fontSize:25,
-        textAlign:'center',
-        marginTop:30,
-        backgroundColor:Colors.PRIMARY,
-        borderRadius:99,
-        color:Colors.WHITE
-      }}>Sign In</Text>
-
-</TouchableOpacity>
+      }}>Conform Password</Text>
+      <TextInput
+      secureTextEntry={true}
+       style={styles.input}
+       placeholder='Enter Your Password' />
+        
+    </View> 
 
 
 <TouchableOpacity>
@@ -85,16 +98,15 @@ export default function SignIn(){
         backgroundColor:Colors.PRIMARY,
         borderRadius:99,
         color:Colors.WHITE
-      }}>Sign In With Google</Text>
+      }}>Sign Up</Text>
 
-    
 </TouchableOpacity>
-
-</View>
+    
+        
+    </View>
 
   
   )
-
 
 }
 
